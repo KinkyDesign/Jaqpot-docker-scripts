@@ -5,4 +5,4 @@ git pull
 mvn install  -D skipTests=true
 cd ../../ 
 docker build -t image-analysis .
-docker run -it -d -p 8880:8880 --name image-analysis image-analysis
+docker run -it -d -p 8880:8880 --restart=unless-stopped --name image-analysis image-analysis

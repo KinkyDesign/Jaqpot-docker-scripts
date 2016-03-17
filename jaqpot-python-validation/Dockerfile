@@ -8,13 +8,14 @@ RUN pip install scikit-learn
 RUN apt-get update
 RUN apt-get install -y libatlas-base-dev gfortran libopenblas-dev
 RUN pip install scipy
+RUN pip install matplotlib
 
 # Expose the ports we're interested in
 EXPOSE 5000
 
-ADD ./packages/algorithms/pyson_production.py /pyson_production.py
+ADD ./packages/validation/valid_service.py /valid_service.py
 
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interface
-CMD ["python","/pyson_production.py"]
+CMD ["python","/valid_service.py"]
 

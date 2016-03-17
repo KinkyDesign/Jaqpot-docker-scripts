@@ -391,6 +391,10 @@
                         <entry name="jms/topic/preparation"/>
                         <entry name="java:jboss/exported/jms/topic/preparation"/>
                     </jms-topic>
+                    <jms-topic name="validation">
+                        <entry name="jms/topic/validation"/>
+                        <entry name="java:jboss/exported/jms/topic/validation"/>
+                    </jms-topic>
                 </jms-destinations>
             </hornetq-server>
         </subsystem>
