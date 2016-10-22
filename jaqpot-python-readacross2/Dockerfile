@@ -13,9 +13,9 @@ RUN pip install matplotlib
 # Expose the ports we're interested in
 EXPOSE 5000
 
-ADD ./packages/PWS/iltest.py /iltest.py
+ADD ./packages/readacross/rac.py /rac.py
 
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interface
-CMD ["python","/iltest.py"]
+CMD ["python","/rac.py"]
 
