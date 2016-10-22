@@ -10,14 +10,14 @@ RUN cd $HOME && curl http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-
 
 # Set the JBOSS_HOME env variable
 ENV JBOSS_HOME /opt/jboss/wildfly
-ENV JAVA_OPTS -Xms512m -Xmx4096m -XX:MaxPermSize=256m
+ENV JAVA_OPTS -Xms8192m -Xmx12048m -XX:MaxPermSize=512m
 #ENV JAVA_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n
 
 USER root
 
 # Expose the ports we're interested in
 EXPOSE 8080
-EXPOSE 9990
+#EXPOSE 9990
 #EXPOSE 8787
 
 ADD ./scripts/standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
