@@ -31,4 +31,6 @@ RUN R CMD BATCH /scripts/install_ExpDesignDependencies.R /dev/stdout
 COPY ./packages/ExpDesignPkg_1.5.tar.gz /packages/
 RUN R CMD INSTALL /packages/ExpDesignPkg_1.5.tar.gz --library=/usr/local/lib/R/site-library
 
-CMD service opencpu restart && tail -F /var/log/opencpu/apache_access.log
+#CMD ["service", "opencpu" , "restart"]
+#CMD ["apache2","-D","FOREGROUND"]
+CMD /usr/sbin/apache2ctl -D FOREGROUND
